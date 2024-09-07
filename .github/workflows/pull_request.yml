@@ -22,8 +22,11 @@ jobs:
       - name: Grant execute permissions for gradlew
         run: chmod +x gradlew
 
+      - name : Build with Gradle
+        run : ./gradlew build
+
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4
         with:
           name: AndroidCICD.apk
-          path: C:\Android\CICDApplication\app\build\outputs\apk\debug
+          path: app\build\outputs\apk\debug\AndroidCICD.apk
